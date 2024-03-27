@@ -1,0 +1,11 @@
+
+# Ignore directories
+data/
+database/
+
+# Ignore all .sql files in the database directory (example)
+database/*.sql
+
+# Ignore specific file types globally (optional example)
+*.shp
+
