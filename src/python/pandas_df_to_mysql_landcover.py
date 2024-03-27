@@ -17,8 +17,8 @@ PRIMARY KEY (original_indices)
 
 
 # Save the aggregated results to a CSV file
-# df = pd.read_csv(r'.\..\..\data\sample\pcodes.csv')
-df = pd.read_excel(r'.\..\..\data\grid_center_shp\grid_center_canada_with_landcover.xls')
+# df = pd.read_csv(r'.\..\..\data\sample\pcodes.csv') /home/hesam/canada-climate2024-soil-freezethaw/data/shapefiles/grid_center_shp
+df = pd.read_excel(r'./../../data/shapefiles/grid_center_shp/grid_center_canada_with_landcover.xls')
 print(df)
 print(df.columns)
 # df = df.drop(columns='Unnamed: 0', axis=1)
@@ -29,7 +29,7 @@ host = 'localhost'
 port = 3306
 user = 'root'
 password = '0922'  # Your confirmed password
-database = 'CCCR'  # Your database name
+database = 'eccc'  # Your database name
 
 # SQLAlchemy engine for MySQL connection (using pymysql as the driver)
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')

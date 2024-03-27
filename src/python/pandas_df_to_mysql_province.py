@@ -12,7 +12,7 @@ PRIMARY KEY (original_indices)
 
 
 # Save the aggregated results to a CSV file
-df = pd.read_csv(r'.\..\..\data\sample\pcodes.csv')
+df = pd.read_csv(r'./../../data/csv/pcodes.csv')
 print(df)
 print(df.columns)
 df = df.drop(columns='Unnamed: 0', axis=1)
@@ -23,7 +23,7 @@ host = 'localhost'
 port = 3306
 user = 'root'
 password = '0922'  # Your confirmed password
-database = 'CCCR'  # Your database name
+database = 'eccc'  # Your database name
 
 # SQLAlchemy engine for MySQL connection (using pymysql as the driver)
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
