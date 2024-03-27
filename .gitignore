@@ -7,5 +7,5 @@ database/
 database/*.sql
 
 # Ignore specific file types globally (optional example)
-*.shp
+data/*.shp
 
