@@ -31,8 +31,9 @@ def batch_update(connection, batch_size=1000000):
 
     cursor.execute('CREATE TEMPORARY TABLE indices_province_mapping_temp AS SELECT original_indices, landcover FROM indices_province_mapping;')
     cursor.execute('ALTER TABLE indices_province_mapping_temp ADD INDEX(original_indices);')
-
+    
     cursor.execute('ALTER TABLE co_table ADD COLUMN province VARCHAR(255);')
+    cursor.execute('ALTER TABLE co_table ADD INDEX(original_indices);')
 
     # Update in batches
     for start_id in range(1, max_id, batch_size):
@@ -52,7 +53,7 @@ def main():
     port = 3306
     user = 'root'
     password = '0922'
-    database = 'cccr'
+    database = 'eccc'
     
     connection = connect_to_database(host, port, user, password, database)
     if connection is not None:

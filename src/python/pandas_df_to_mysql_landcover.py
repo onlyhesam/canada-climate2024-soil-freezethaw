@@ -3,7 +3,7 @@ import pandas as pd
 
 
 
-
+#run this query directly in mysql
 create_table_query = """
 CREATE TABLE indices_landcover_mapping (original_indices VARCHAR(255), longitude FLOAT, latitude FLOAT,  landcover INT, PRIMARY KEY (original_indices));
 """
