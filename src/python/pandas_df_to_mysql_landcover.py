@@ -5,20 +5,14 @@ import pandas as pd
 
 
 create_table_query = """
-CREATE TABLE indices_landcover_mapping (
-original_indices VARCHAR(255),
-longitude FLOAT,
-latitude FLOAT, 
-landcover INT,
-PRIMARY KEY (original_indices)
-);
+CREATE TABLE indices_landcover_mapping (original_indices VARCHAR(255), longitude FLOAT, latitude FLOAT,  landcover INT, PRIMARY KEY (original_indices));
 """
 
 
 
 # Save the aggregated results to a CSV file
 # df = pd.read_csv(r'.\..\..\data\sample\pcodes.csv') /home/hesam/canada-climate2024-soil-freezethaw/data/shapefiles/grid_center_shp
-df = pd.read_excel(r'./../../data/shapefiles/grid_center_shp/grid_center_canada_with_landcover.xls')
+df = pd.read_excel(r'./../../data/csv/grid_center_canada_with_landcover.xls')
 print(df)
 print(df.columns)
 # df = df.drop(columns='Unnamed: 0', axis=1)
@@ -33,14 +27,6 @@ database = 'eccc'  # Your database name
 
 # SQLAlchemy engine for MySQL connection (using pymysql as the driver)
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
-
-
-# Connect to the database and execute the query
-with engine.connect() as connection:
-    connection.execute(create_table_query)
-
-print("Table created successfully.")
-
 
 
 # Assuming 'df' is your DataFrame

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 import pandas as pd
 
-
+#run this query directly in mysql
 create_table_query = """
 CREATE TABLE indices_province_mapping (
 original_indices VARCHAR(255),
@@ -16,6 +16,7 @@ df = pd.read_csv(r'./../../data/csv/pcodes.csv')
 print(df)
 print(df.columns)
 df = df.drop(columns='Unnamed: 0', axis=1)
+print(df.head())
 
 
 # Your MySQL credentials and database details
@@ -29,14 +30,8 @@ database = 'eccc'  # Your database name
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
 
 
-# Connect to the database and execute the query
-with engine.connect() as connection:
-    connection.execute(create_table_query)
-
-print("Table created successfully.")
-
 
 # Assuming 'df' is your DataFrame
 # Save the DataFrame to your MySQL table named 'co_table'
 # df.to_sql('indices_province_mapping', con=engine, if_exists='append', index=False)
-df.to_sql('indices_landcover_mapping', con=engine, if_exists='append', index=False)
+df.to_sql('indices_province_mapping', con=engine, if_exists='append', index=False)
