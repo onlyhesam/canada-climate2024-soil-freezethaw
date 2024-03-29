@@ -20,8 +20,8 @@ print(df.head())
 
 
 # Your MySQL credentials and database details
-host = 'localhost'
-port = 3306
+host = '127.0.0.1' #'localhost'
+port = 3307
 user = 'root'
 password = '0922'  # Your confirmed password
 database = 'eccc'  # Your database name
