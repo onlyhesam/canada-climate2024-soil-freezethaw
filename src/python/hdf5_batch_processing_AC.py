@@ -49,13 +49,13 @@ def clip_hdf_using_indices(hdf_path, indices):
     date_time = extract_datetime_from_filename(os.path.basename(hdf_path))
     
     with h5py.File(hdf_path, 'r') as hdf:
-        ft_annual_qa = np.array([hdf['ft_annual_qa'][i, j] for (i, j) in indices])
+        ft_annual_accuracy = np.array([hdf['ft_annual_accuracy'][i, j] for (i, j) in indices])
         cell_lon = np.array([hdf['cell_lon'][i, j] for (i, j) in indices])
         cell_lat = np.array([hdf['cell_lat'][i, j] for (i, j) in indices])
     
     df = pd.DataFrame({
         'datetime': [date_time] * len(indices),
-        'ft_annual_qa': ft_annual_qa,
+        'ft_annual_accuracy': ft_annual_accuracy,
         'longitude': cell_lon,
         'latitude': cell_lat,
         'original_indices': indices
@@ -73,7 +73,7 @@ def clip_hdf_using_indices(hdf_path, indices):
     # Write batch results to SQL
     if not df.empty:
         df['original_indices'] = df['original_indices'].astype(str)
-        df.to_sql('qaam_table', con=engine, if_exists='append', index=False)
+        df.to_sql('acam_table', con=engine, if_exists='append', index=False)
 
         # End timing the database writing part
         db_end_time = time.time()
@@ -91,8 +91,7 @@ def extract_date_from_filename(filename):
     """
     Extracts the year and day from the HDF file name.
     
-    Filename format example: AMSR_37V_AM_FT_2021_day003_v05.1
-    Filename format example for QA: SMMR_global_QA_1980_PM_v05.1.h5
+    Filename format example: SSMI_37V_FT_2015_PM_accuracy_v05.1.h5
     """
     parts = filename.split('_')
     year = int(parts[3])  # Extracts the year part
@@ -100,25 +99,25 @@ def extract_date_from_filename(filename):
 
 
 
-# qurey = '''
-# CREATE TABLE qapm_table (
-#     datetime DATETIME,
-#     ft_annual_qa FLOAT,
-#     longitude FLOAT,
-#     latitude FLOAT,
-#     original_indices VARCHAR(25) -- Adjusted to accommodate the maximum tuple length (e.g., (2000, 2000))
-# );
-# '''
+qurey = '''
+CREATE TABLE acpm_table (
+    datetime DATETIME,
+    ft_annual_accuracy FLOAT,
+    longitude FLOAT,
+    latitude FLOAT,
+    original_indices VARCHAR(25) -- Adjusted to accommodate the maximum tuple length (e.g., (2000, 2000))
+);
+'''
 
-# qurey = '''
-# CREATE TABLE qaam_table (
-#     datetime DATETIME,
-#     ft_annual_qa FLOAT,
-#     longitude FLOAT,
-#     latitude FLOAT,
-#     original_indices VARCHAR(25) -- Adjusted to accommodate the maximum tuple length (e.g., (2000, 2000))
-# );
-# '''
+qurey = '''
+CREATE TABLE acam_table (
+    datetime DATETIME,
+    ft_annual_accuracy FLOAT,
+    longitude FLOAT,
+    latitude FLOAT,
+    original_indices VARCHAR(25) -- Adjusted to accommodate the maximum tuple length (e.g., (2000, 2000))
+);
+'''
 
 
 # Configuration and execution
@@ -126,8 +125,8 @@ shapefile_path = './../../data/shapefiles/canada_border/canada.shp'
 # hdf_directory = './../../data/sample'
 hdf_sample_path = r'D:\SateliteBasedData\FT_Product\MEaSUREs_nsidc_0477\Downloads\AMSR_37V_AM_FT_2021_day003_v05.1.h5'
 hdf_directory = r'D:\SateliteBasedData\FT_Product\MEaSUREs_nsidc_0477\Downloads'
-hdf_files = [os.path.join(hdf_directory, f) for f in os.listdir(hdf_directory) if fnmatch.fnmatch(f, '*QA*AM*.h5')] 
-print(hdf_files)
+hdf_files = [os.path.join(hdf_directory, f) for f in os.listdir(hdf_directory) if fnmatch.fnmatch(f, '*_AM_accuracy_*.h5')] 
+
 
 canada_indices = determine_canada_indices(hdf_sample_path, shapefile_path)
 

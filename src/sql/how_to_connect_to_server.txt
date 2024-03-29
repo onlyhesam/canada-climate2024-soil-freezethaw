@@ -1,0 +1,10 @@
+
+run this in cmd
+cloud-sql-proxy.exe burnished-ember-418623:us-central1:eccc -port=3307
+
+
+
+connect to mysql on google 
+mysql -h 127.0.0.1 -P 3307 -u root -p
+
+
