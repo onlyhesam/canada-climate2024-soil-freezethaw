@@ -1,0 +1,22 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>thawed_7_n</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>40</HistMin>
+        <HistMax>84</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|1|0|0|0|0|0|4|0|0|0|0|0|6|0|0|0|0|0|15|0|0|0|0|0|45|0|0|0|0|4605|0|0|0|0|0|739|0|0|0|0|0|233|0|0|0|0|0|146|0|0|0|0|0|104|0|0|0|0|67|0|0|0|0|0|57|0|0|0|0|0|40|0|0|0|0|0|41|0|0|0|0|0|38|0|0|0|0|28|0|0|0|0|0|18|0|0|0|0|0|19|0|0|0|0|0|11|0|0|0|0|0|9|0|0|0|0|11|0|0|0|0|0|16|0|0|0|0|0|9|0|0|0|0|0|4|0|0|0|0|0|5|0|0|0|0|9|0|0|0|0|0|5|0|0|0|0|0|5|0|0|0|0|0|4|0|0|0|0|0|2|0|0|0|0|3|0|0|0|0|0|2|0|0|0|0|0|2|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata domain="IMAGE_STRUCTURE">
+      <MDI key="PIXELTYPE">SIGNEDBYTE</MDI>
+    </Metadata>
+    <Metadata>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

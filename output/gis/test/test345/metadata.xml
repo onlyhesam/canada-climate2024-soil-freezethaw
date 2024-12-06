@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20240425</CreaDate><CreaTime>15590100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.7\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\RasterCalculator" Date="20240425" Time="155901">RasterCalculator Con(("thawed_6_all"&gt;= -0.005) &amp; ("thawed_6_all" &lt;= 0.005), 0,"thawed_6_all")
+ "C:\Users\salma\OneDrive - UQAM\canada-climate2024-soil-freezethaw\output\gis\test\test345"</Process></lineage></DataProperties></Esri></metadata>

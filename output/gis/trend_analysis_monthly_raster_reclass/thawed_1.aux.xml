@@ -1,0 +1,19 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>thawed_1</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>115</HistMin>
+        <HistMax>386</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|1|1|1|3|2|1|1|2|1|1|0|1|0|4|3|1|0|0|2|6|4|11|21|48|51|82|126|151|354|3109|506|239|179|151|150|212|76|51|50|34|34|45|35|31|18|17|26|22|26|15|22|34|15|20|21|13|14|14|21|10|13|8|11|7|8|13|5|13|10|5|6|12|3|5|1|3|3|5|5|5|3|0|2|2|1|4|3|0|2|1|1|2|4|3|1|2|3|1|2|1|4|1|3|0|0|0|1|2|2|2|1|0|1|0|0|2|1|2|2|2|1|0|0|0|0|1|2|1|0|0|1|1|0|0|1|0|0|0|0|0|0|1|0|0|1|0|1|0|0|0|0|1|0|0|0|0|0|0|0|0|0|1|0|1|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

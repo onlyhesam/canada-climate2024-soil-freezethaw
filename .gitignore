@@ -9,3 +9,4 @@ database/*.sql
 # Ignore specific file types globally (optional example)
 data/*.shp
 
+.env

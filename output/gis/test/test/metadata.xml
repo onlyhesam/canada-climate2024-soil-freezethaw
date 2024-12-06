@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20240424</CreaDate><CreaTime>12181400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.7\ArcToolbox\Toolboxes\3D Analyst Tools.tbx\Reclassify" Date="20240424" Time="121814">Reclassify thawed_2_all VALUE "-1 0 1;0 1 2" "C:\Users\salma\OneDrive - UQAM\canada-climate2024-soil-freezethaw\output\gis\test\test" DATA</Process></lineage></DataProperties></Esri></metadata>
