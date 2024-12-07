@@ -102,21 +102,34 @@ This figure presents a heatmap depicting the slopes of the fitted linear regress
 This figure illustrates the **interannual variations in the number of unfrozen days** across the Tundra region in Canada from 1979 to 2021.
 
 **Figure**:
-![Tundra Interannual Variations](output/figures/untitled folder/tundra.jpg)
+![Tundra Interannual Variations](output/figures/tundra.jpg)
 
 ---
 
-### 5. Fluctuations in Unfrozen Days Across Canada
+### 5. Fluctuations in Frozen Days Across Canada (1979-2021)
 
 **Highlights**:
-- The linear trend analysis on the number of unfrozen days across Canada revealed a significant increasing trend (**p-value = 0.02**) with a slope of **+0.18 days/year** (**r = 0.33**).
-- Since 1994, using LOESS smoothing and a change point analysis, the rate of increase accelerated significantly (**+0.32 days/year**, **p-value ≤ 0.05**, **r = 0.996**).
+- The annual number of days with frozen ground has decreased across Canada. 
+- Satellite observations consistently show a reduction in the number of days with frozen ground, occurring at a rate of 1.7 days per decade since 1979.
+
 
 **Caption**:
-This figure illustrates the fluctuation in the number of unfrozen days in Canada from 1979 to 2021. Each bar represents the deviation from the average number of days for a given year, with positive values indicating years with more unfrozen days than the average. The trend line depicts the **ordinary least-squares regression**, while the green line represents a smoothed LOESS curve. A vertical line at the year **1994** highlights a notable shift in the trend.
+The annual difference over Canada in number of days with frozen ground (DFG) from the 1979-2021 average using the method outlined in US-EPA (2023). Each bar represents the deviation from the average number of days for a given year, with positive values indicating years with more frozen days than the average. The trend line (Black) depicts the ordinary least-squares linear regression, providing insight into the overall trend. (Brief description: The figure shows that the number of frozen days as decreased by 1,7 days per decade over Canada from 1979 to 2021)
 
 **Figure**:
-![Fluctuations in Unfrozen Days](path_to_figure_5.png)
+![Fluctuations in Unfrozen Days](output/illustrator/Annual_Difference_in_Frozen_Days_from_the_1979_2021_Average.png)
+
+---
+
+---
+
+### 5. Annual Mean of Days with Frozen Ground (2000-2020) 
+
+**Caption**:
+
+
+**Figure**:
+![Fluctuations in Unfrozen Days](output/illustrator/frozen_ground_canada.png)
 
 ---
 
