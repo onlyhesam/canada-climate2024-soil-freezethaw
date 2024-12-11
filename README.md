@@ -116,7 +116,7 @@ The annual difference over Canada in number of days with frozen ground (DFG) fro
 
 
 **Figure**:
-![Fluctuations in Unfrozen Days](output/illustrator/frozen_ground_canada.png)
+![Fluctuations in Unfrozen Days](output/illustrator/frozen_ground_canada_usa.png)
 
 ---
 
