@@ -9,7 +9,8 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 from sqlalchemy import create_engine
-
+from dotenv import load_dotenv
+load_dotenv()
 
 #run this query directly in mysql
 # qurey = '''
@@ -143,11 +144,11 @@ hdf_files_sorted = sorted(hdf_files, key=lambda x: extract_date_from_filename(os
 
 
 # MySQL credentials and database details
-host = '127.0.0.1'
-port = 3306
-user = 'root'
-password = 'sydmEv-gobryc-gaqgu2'  # Your confirmed password
-database = 'cccr2025'  # Your database name
+host = os.getenv('DB_HOST', '127.0.0.1')  # Default to '127.0.0.1' if not set
+port = int(os.getenv('DB_PORT', 3306))  # Default to 3307
+user = os.getenv('DB_USER', 'root')  # Default to 'root'
+password = os.getenv('DB_PASSWORD', '')  # Default to an empty string
+database = os.getenv('DB_NAME', 'cccr2025')  # Default to 'cccr2025'
 
 # SQLAlchemy engine for MySQL connection (using pymysql as the driver)
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')

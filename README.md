@@ -4,7 +4,7 @@ This project presents an in-depth analysis of soil freeze-thaw dynamics in Canad
 
 
 **Caption**:
-Figure 6.6.2: Trends in the annual number of days with frozen ground (DFG) from 1979 to 2021, calculated using the method outlined in (Li et al. 2021). The map visualizes the trend in the number of DFG, measured in days per year. Grid cells highlighted in blue indicate an increasing trend, while red grid cells signify a decreasing trend. Pixels with no significant trends (Mann-Kendall test with p-value of > 0.05) are displayed with “x”.
+Trends in the annual number of days with frozen ground (DFG) from 1979 to 2021, calculated using the method outlined in (Li et al. 2021). The map visualizes the trend in the number of DFG, measured in days per year. Grid cells highlighted in blue indicate an increasing trend, while red grid cells signify a decreasing trend. Pixels with no significant trends (Mann-Kendall test with p-value of > 0.05) are displayed with “x”.
 (Brief description: The figure shows that most of the regions in Canada has encountered a decrease in the number of frozen days from 1979 to 2021)
 
 ![Overview](output/illustrator/CCCR2024_Frozen_Days_QGIS.png)

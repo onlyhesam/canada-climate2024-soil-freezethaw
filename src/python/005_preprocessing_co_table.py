@@ -1,5 +1,9 @@
 import mysql.connector
+import os
 from mysql.connector import Error
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def connect_to_database(host, port, user, password, database):
     """Connect to the MySQL database and return the connection."""
@@ -59,11 +63,12 @@ def populate_table_in_batches(connection, batch_size=100000):
     cursor.close()
 
 def main():
-    host = '127.0.0.1'
-    port = 3307
-    user = 'root'
-    password = '0922'
-    database = 'eccc'
+     # MySQL credentials and database details
+    host = os.getenv('DB_HOST', '127.0.0.1')  # Default to '127.0.0.1' if not set
+    port = int(os.getenv('DB_PORT', 3306))  # Default to 3307
+    user = os.getenv('DB_USER', 'root')  # Default to 'root'
+    password = os.getenv('DB_PASSWORD', '')  # Default to an empty string
+    database = os.getenv('DB_NAME', 'cccr2025')  # Default to 'cccr2025'
     
     connection = connect_to_database(host, port, user, password, database)
     if connection:

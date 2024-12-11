@@ -9,6 +9,8 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def extract_datetime_from_filename(filename):
@@ -163,8 +165,8 @@ def extract_date_from_filename(filename):
 
 if __name__ == "__main__":
     # Configuration and execution
-    num_workers = 5  # Adjust based on your system's capability
-    batch_size = 5  # Number of files to process in each batch
+    num_workers = 10  # Adjust based on your system's capability
+    batch_size = 10  # Number of files to process in each batch
 
 
     shapefile_path = os.path.normpath(os.path.join('.', '..', '..', 'data', 'shapefiles', 'us_canada_border', 'us_canada_border.shp'))
@@ -186,7 +188,7 @@ if __name__ == "__main__":
     hdf_files = [
         os.path.join(hdf_directory, f)
         for f in os.listdir(hdf_directory)
-        if fnmatch.fnmatch(f, '*CO_FT_*_day*.h5') and int(f.split('_')[4]) >= 2000]
+        if fnmatch.fnmatch(f, '*CO_FT_*_day*.h5') and int(f.split('_')[4]) < 2000]
 
     canada_indices = determine_canada_indices(hdf_files[0], shapefile_path)
 
@@ -195,11 +197,11 @@ if __name__ == "__main__":
 
 
     # MySQL credentials and database details
-    host = 'localhost'
-    port = 3306
-    user = 'root'
-    password = 'sydmEv-gobryc-gaqgu2'  #  password
-    database = 'cccr2025'  # database name
+    host = os.getenv('DB_HOST', '127.0.0.1')  # Default to '127.0.0.1' if not set
+    port = int(os.getenv('DB_PORT', 3306))  # Default to 3307
+    user = os.getenv('DB_USER', 'root')  # Default to 'root'
+    password = os.getenv('DB_PASSWORD', '')  # Default to an empty string
+    database = os.getenv('DB_NAME', 'cccr2025')  # Default to 'cccr2025'
 
     # SQLAlchemy engine for MySQL connection (using pymysql as the driver)
     engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
